@@ -1,3 +1,55 @@
+
+header {
+  border-bottom: 2px dashed @navigation-border;
+  //margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+
+  .top-container {
+    //max-width: 800px;
+    display: flex;
+    //margin: 1% 0 0 13.5%;
+    width: 800px;
+    margin: 0 auto;
+
+    @media @phone {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  h1 {
+    color: @font-color;
+    width: 50%;
+    padding-top: 15px;
+
+    @media @phone {
+      text-align: center;
+    }
+  }
+}
+
+.fun-bus {
+  //display: flex;
+  width: 800px;
+  margin: 0 auto;
+  border-bottom: 2px dashed @navigation-border;
+
+  .bus {
+    padding-bottom: 20px;
+  }
+
+  .fun {
+
+    .keyframes(fade-in; {
+      0% { opacity: 0;}
+      100% {opacity: 1;}
+    });
+
+    .animation(fade-in 0.4s linear infinite alternate)
+  }
+}
+
 .home {
 
   .content-section {
@@ -5,20 +57,34 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-
+    @media @phone {
+      display: flex;
+      flex-direction: column;
+    }
    
     
     .text-content {
       width: 48%;
       padding-right: 1%;
+      @media @phone {
+        width: 100%;
+      }
     }
 
     .img-content {
       width: 48%;
       padding-left: 1%;
 
+      @media @phone {
+        width: 100%;
+        padding-left: 0;
+      }
+
       img {
         border-radius: 10px;
+        @media @phone {
+          width: 100%;
+        }
       }
     }
   }
@@ -26,10 +92,16 @@
   .inverse-content {
     padding-bottom: 30px;
     border-bottom: 2px dashed @navigation-border;
+    @media @phone {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+    
 
     .text-content {
       padding-left: 1%;
       padding-right: 0;
+      
     }
 
     .img-content {
@@ -41,6 +113,9 @@
   .content-destination {
     width: 75%;
     margin: 0 auto 30px;
+    @media @phone {
+      width: 100%;
+    }
 
     img {
       border-radius: 10px;
@@ -53,9 +128,30 @@
     display: flex;
     justify-content: space-between;
 
+    @media @phone {
+      .mobile-section();
+    }
     .destination {
       width: 30%;
       margin-bottom: 30px;
+
+      @media @phone {
+         width: 80%;
+      }
+      .btn {
+        display: flex;
+        .signup-btn {
+          .custom-btn();
+          @media @phone {
+            width: 90%;
+            height: 45px;
+            font-size: 2rem;
+            border-radius: 15px;
+            
+          }
+        }
+        
+      }
     }
   }
 }// home
