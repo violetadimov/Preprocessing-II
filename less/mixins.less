@@ -1,1 +1,52 @@
 // Mixins in here
+
+
+.displayFlex(@justify, @align) {
+    display: flex;
+    justify-content: @justify;
+    align-items: @align;
+}
+
+.mobile-section() {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.keyframes(@name; @arguments) {
+    @-moz-keyframes @name {
+        @arguments();
+    }
+
+    @-webkit-keyframes @name {
+        @arguments();
+    }
+
+    @keyframes @name {
+        @arguments();
+    }
+}
+
+.animation(@arguments) {
+    -webkit-animation: @arguments;
+    -moz-animation: @arguments;
+    animation: @arguments;
+}
+.custom-btn(@button-bg: #0bb195, @width: 200px, @font-color: white) {
+    display: block;
+    background-color: @button-bg;
+    cursor: pointer;
+    width: @width;
+    height: 45px;
+    font-size: 2rem;
+    border-radius: 10px;
+    color: @font-color;
+
+    &:hover {
+        background-color: @font-color;
+        color: @button-bg;
+    }
+
+   
+
+    
+}
